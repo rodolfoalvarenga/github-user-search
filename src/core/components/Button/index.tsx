@@ -5,10 +5,10 @@ type Props = {
   text: string;
 };
 
-const ButtonIcon = ({ text }: Props) => (
+const Button = ({ text }: Props) => (
   <button className="btn">
     <h5>{text}</h5>
   </button>
 );
 
-export default ButtonIcon;
+export default Button;

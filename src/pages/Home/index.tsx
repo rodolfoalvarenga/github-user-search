@@ -1,4 +1,4 @@
-import ButtonIcon from 'core/components/ButtonIcon';
+import Button from 'core/components/Button';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
@@ -17,7 +17,7 @@ const Home = () => (
       Mateusz Wierzbicki: antforfigma@gmail.com
     </p>
     <Link to="/search">
-      <ButtonIcon text="Começar" />
+      <Button text="Começar" />
     </Link>
   </div>
 );
