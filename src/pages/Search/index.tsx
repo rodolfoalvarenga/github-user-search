@@ -1,6 +1,7 @@
 import { makeRequest } from 'core/utils/request';
 import React, { useState } from 'react';
-import BaseForm from './BaseForm';
+import BaseForm from './components/BaseForm';
+import GitCard from './components/GitCard';
 import './styles.scss';
 
 type FormState = {
@@ -50,6 +51,7 @@ const Search = () => {
           />
         </div>
       </BaseForm>
+      <GitCard />
     </form>
   );
 };
