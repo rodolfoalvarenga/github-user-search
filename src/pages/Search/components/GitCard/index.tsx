@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import ImageLoader from '../Loaders/ImageLoader';
 import InfoLoader from '../Loaders/InfoLoader';
 import './styles.scss';
+import DayJS from 'react-dayjs';
 
 type Props = {
   gitUserName: string;
@@ -62,7 +63,9 @@ const GitCard = ({ gitUserName }: Props) => {
               </div>
               <div className="user-info">
                 Membro desde:{' '}
-                <span className="text-info">{user?.created_at}</span>
+                <span className="text-info">
+                  <DayJS format="DD/MM/YYYY">{user?.created_at}</DayJS>
+                </span>
               </div>
             </div>
           </div>
