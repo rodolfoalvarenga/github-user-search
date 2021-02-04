@@ -14,6 +14,7 @@ const Search = () => {
   const [formData, setFormData] = useState<FormState>({
     login: '',
   });
+  const [gitUser, setGitUser] = useState('');
 
   const handleOnChange = (event: FormEvent) => {
     const name = event.target.name;
@@ -35,24 +36,28 @@ const Search = () => {
     }).then(() => {
       setFormData({ login: '' });
     });
+
+    setGitUser(formData.login);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <BaseForm title="Encontre um perfil Github">
-        <div className="text-search">
-          <input
-            value={formData.login}
-            name="login"
-            type="text"
-            className="form-control"
-            onChange={handleOnChange}
-            placeholder="Usuário GitHub"
-          />
-        </div>
-      </BaseForm>
-      <GitCard />
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <BaseForm title="Encontre um perfil Github">
+          <div className="text-search">
+            <input
+              value={formData.login}
+              name="login"
+              type="text"
+              className="form-control"
+              onChange={handleOnChange}
+              placeholder="Usuário GitHub"
+            />
+          </div>
+        </BaseForm>
+      </form>
+      {gitUser && <GitCard gitUserName={formData.login} />}
+    </>
   );
 };
 

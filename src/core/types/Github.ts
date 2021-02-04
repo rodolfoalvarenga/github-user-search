@@ -3,6 +3,8 @@ export type GitHubResponse = {
 };
 
 export type Github = {
+  avatar_url: string;
+  name: string;
   login: string;
   public_repos: number;
   followers: number;
@@ -11,4 +13,5 @@ export type Github = {
   blog: string;
   location: string;
   created_at: string;
+  html_url: string;
 };
